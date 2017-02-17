@@ -1,7 +1,7 @@
 'use strict';
 
 const Hapi = require('hapi');
-const base_routes = require('../routes/base_routes');
+const routes = require('../routes/index');
 const inert = require('inert');
 
 function createServer(port) {
@@ -27,7 +27,7 @@ function createServer(port) {
 	});
 
 	// Load routes
-	server.route(base_routes);
+	server.route(routes);
 
 	return server;
 }
